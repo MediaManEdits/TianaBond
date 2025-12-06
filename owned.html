@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Comic Collection - Series Name</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 40px;
+            text-align: center;
+            color: #333;
+        }
+        h1 {
+            margin-bottom: 40px;
+            color: #222;
+        }
+        .accordion-container {
+            display: inline-block;
+            text-align: left;
+            max-width: 600px;
+            width: 100%;
+        }
+        .accordion {
+            background-color: white;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: background-color 0.3s;
+        }
+        .accordion:hover {
+            background-color: #f0f0f0;
+        }
+        .accordion:after {
+            content: '\002B'; /* Plus sign */
+            font-size: 20px;
+            color: #777;
+            float: right;
+            margin-left: 5px;
+        }
+        .active:after {
+            content: "\2212"; /* Minus sign */
+        }
+        .panel {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            border-radius: 0 0 8px 8px;
+            margin-bottom: 10px;
+        }
+        .panel a {
+            display: block;
+            padding: 12px 10px;
+            color: #0066cc;
+            text-decoration: none;
+            font-size: 17px;
+            border-bottom: 1px solid #eee;
+        }
+        .panel a:hover {
+            background-color: #f9f9f9;
+            color: #003366;
+        }
+        .panel a:last-child {
+            border-bottom: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Titles with Issues Owned</h1>
+
+    <div class="accordion-container">
+        <!-- Repeat these blocks as needed -->
+        <button class="accordion">Archie Annual Digest</button>
+        <div class="panel">
+            <p>Issue #27 (First Issue)</p>
+            <p>Issue #28</p>
+            <p>Issue #29</p>
+            <p>Issue #30</p>
+            <p>Issue #31</p>
+            <p>Issue #33</p>
+            <p>Issue #34</p>
+            <p>Issue #35</p>
+            <p>Issue #36</p>
+            <p>Issue #39</p>
+            <p>Issue #40</p>
+            <p>Issue #41</p>
+            <p>Issue #43</p>
+            <p>Issue #45</p>
+            <p>Issue #46</p>
+            <p>Issue #47</p>
+            <p>Issue #48</p>
+            <p>Issue #51</p>
+            <p>Issue #53</p>
+            <p>Issue #55</p>
+            <p>Issue #56</p>
+            <p>Issue #57</p>
+            <p>Issue #58</p>
+            <p>Issue #60</p>
+            <p>Issue #61</p>
+            <p>Issue #63</p>
+            <p>Issue #64</p>
+            <p>Issue #65</p>
+            <p>Issue #67</p>
+            <p>Issue #69 (Last Issue)</p>
+        </div>
+
+        <button class="accordion">Archie... Archie Andrews, Where Are You</button>
+        <div class="panel">
+            <p>Issue #10</p>
+            <p>Issue #15</p>
+            <p>Issue #21</p>
+            <p>Issue #23</p>
+            <p>Issue #25</p>
+            <p>Issue #26</p>
+            <p>Issue #28</p>
+            <p>Issue #29</p>
+            <p>Issue #31</p>
+            <p>Issue #32</p>
+            <p>Issue #34</p>
+            <p>Issue #37</p>
+            <p>Issue #38</p>
+            <p>Issue #39</p>
+            <p>Issue #41</p>
+            <p>Issue #46</p>
+            <p>Issue #49</p>
+            <p>Issue #51</p>
+            <p>Issue #61</p>
+        </div>
+    </div>
+
+    <script>
+        const acc = document.getElementsByClassName("accordion");
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
